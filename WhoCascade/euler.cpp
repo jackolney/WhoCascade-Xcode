@@ -18,18 +18,6 @@ using namespace std;
 
 void Euler(initial * i, params * p, double start, double stop, double step)
 {
-	// Initial values
-	//	initial init;
-	//	
-	//	double y1 = init.y1;
-	//	double y2 = init.y2;
-	//	double mort = init.mort;
-	//	
-	//	double N = 0;
-	
-	// Parameters
-	//	Params p;
-	
 	for (double t = start; t < stop; t += step) {
 		
 		cout << fixed << setprecision(3) << t << " y1 = " << i->y1 << " y2 = " << i->y2 << " mort = " << i->mort << " N = " << i->N << endl;
