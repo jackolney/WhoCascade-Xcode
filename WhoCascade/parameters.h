@@ -11,13 +11,14 @@
 
 #include <stdio.h>
 
-class Params {
+class params {
 public:
-	Params(); // constructor
-	~Params(); // destructor
+	params(); // constructor
+	~params(); // destructor
 	
 	/* stuff */
 	double mu;
+	double alpha;
 	
 private:
 	

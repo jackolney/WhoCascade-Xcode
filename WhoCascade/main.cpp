@@ -9,13 +9,16 @@
 #include <iomanip>
 #include <iostream>
 #include "euler.h"
+#include "parameters.h"
 
 using namespace std;
 
 
 int main() {
 	
-	Euler(0, 20,  0.02);
+	params * p = new params;
+	
+	Euler(p, 0, 10,  0.02);
 	
 	return 0;
 }
@@ -42,4 +45,7 @@ int main() {
 // Steps:
 // 1) Can we put everything into functions? (keeps it neat)
 // 2) Sanity check to R output / Berkeley Madonna output
-// 3) EXPAND
+// 3) Needs to take some inputs...
+// 4) Respond by returning a whole heap of vectors to R.
+// 5) EXPAND
+// 4) R .Call()

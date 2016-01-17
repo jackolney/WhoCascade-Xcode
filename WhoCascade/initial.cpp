@@ -10,7 +10,8 @@
 
 initial::initial() :
 y1(100),
-y2(0)
+y2(0),
+mort(0)
 {}
 
 initial::~initial()

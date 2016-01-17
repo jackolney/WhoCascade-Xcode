@@ -8,8 +8,9 @@
 
 #include "parameters.h"
 
-Params::Params() :
-mu(0.01)
+params::params() :
+mu(0.0357),
+alpha(0.1)
 {}
 
-Params::~Params() {}
+params::~params() {}

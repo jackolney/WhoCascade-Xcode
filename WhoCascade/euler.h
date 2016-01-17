@@ -10,7 +10,8 @@
 #define euler_h
 
 #include <stdio.h>
+#include "parameters.h"
 
-void Euler(double start, double stop, double step);
+void Euler(params * p, double start, double stop, double step);
 
 #endif /* euler_h */
