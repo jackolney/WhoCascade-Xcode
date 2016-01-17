@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 #include "parameters.h"
+#include "initial.h"
 
-void Euler(params * p, double start, double stop, double step);
+void Euler(initial * i, params * p, double start, double stop, double step);
 
 #endif /* euler_h */

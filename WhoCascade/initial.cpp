@@ -11,7 +11,8 @@
 initial::initial() :
 y1(100),
 y2(0),
-mort(0)
+mort(0),
+N(0)
 {}
 
 initial::~initial()

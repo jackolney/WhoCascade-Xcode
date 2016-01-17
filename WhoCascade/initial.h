@@ -19,6 +19,7 @@ public:
 	double y1;
 	double y2;
 	double mort;
+	double N;
 	
 private:
 	

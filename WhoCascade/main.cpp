@@ -10,6 +10,7 @@
 #include <iostream>
 #include "euler.h"
 #include "parameters.h"
+#include "initial.h"
 
 using namespace std;
 
@@ -18,7 +19,9 @@ int main() {
 	
 	params * p = new params;
 	
-	Euler(p, 0, 10,  0.02);
+	initial * i = new initial();
+	
+	Euler(i, p, 0, 10,  0.02);
 	
 	return 0;
 }
