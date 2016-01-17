@@ -8,50 +8,15 @@
 
 #include <iomanip>
 #include <iostream>
+#include "euler.h"
 
 using namespace std;
 
-typedef double theFunc(double, double); // This a type called 'F' - which is a function taking two doubles
-
-/* Approximates y(t) in y'(t)=f(t,y) with y(start)=y0 and t=start..stop and the step size 'step'. */
-
-void Euler(theFunc f1, theFunc f2, double start, double stop, double step)
-{
-	// Initial values
-	double y1 = 100;
-	double y2 = 0;
-	
-	for (double t = start; t < stop; t += step) {
-		
-		cout << fixed << setprecision(3) << t << " y1 = " << y1 << " y2 = " << y2 << endl;
-		
-		// Think of this just like the excel implementation of the model, each row is a different cell f(x)
-
-		y1 += step * -0.01 * y1;
-		
-		y2 += step * +0.01 * y1;
-		
-		
-//		y1 += step * f1(t, y1);
-		
-//		y2 += step * f2(t, y2);
-	}
-	cout << "Finished." << endl;
-}
-
-// Two State Model Test
-double StateOne(double t, double y)
-{
-	return -0.01 * y;
-}
-
-double StateTwo(double t, double y)
-{
-	return +0.01 * y;
-}
 
 int main() {
-	Euler(StateOne, StateTwo, 0, 20,  0.02);
+	
+	Euler(0, 20,  0.02);
+	
 	return 0;
 }
 
