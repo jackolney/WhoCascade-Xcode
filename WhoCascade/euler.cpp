@@ -74,8 +74,14 @@ void Euler(initial * i, params * p, double start, double stop, double step)
 			+ ((i->Tx_A_500 + i->Tx_A_350500 + i->Tx_A_250350 + i->Tx_A_200250 + i->Tx_A_100200 + i->Tx_A_50100 + i->Tx_A_50) * 0.1)))
 			+ p->nu_6 * i->UnDx_50100 - (p->rho + (p->art_200 * p->s_7 * p->p * p->theta) + (p->art_200 * p->s_7 * (1-p->p) * p->theta) + p->alpha_7 + p->mu) * i->UnDx_50);
 		
-		
+		/* DIAGNOSED */
 		i->Dx_500 += step * (+ p->rho * i->UnDx_500 - (p->nu_1 + p->epsilon + (p->art_all * p->s_1 * p->p * p->theta) + (p->art_all * p->s_1 * (1-p->p) * p->theta) + p->alpha_1 + p->mu) * i->Dx_500);
+		i->Dx_350500 += step * (+ p->rho * i->UnDx_350500 + p->nu_1 * i->Dx_500 - (p->nu_2 + p->epsilon + (p->art_500 * p->s_2 * p->p * p->theta) + (p->art_500 * p->s_2 * (1-p->p) * p->theta) + p->alpha_2 + p->mu) * i->Dx_350500);
+		i->Dx_250350 += step * (+ p->rho * i->UnDx_250350 + p->nu_2 * i->Dx_350500 - (p->nu_3 + p->epsilon + (p->art_350 * p->s_3 * p->p * p->theta) + (p->art_350 * p->s_3 * (1-p->p) * p->theta) + p->alpha_3 + p->mu) * i->Dx_250350);
+		i->Dx_200250 += step * (+ p->rho * i->UnDx_200250 + p->nu_3 * i->Dx_250350 - (p->nu_4 + p->epsilon + (p->art_350 * p->s_4 * p->p * p->theta) + (p->art_350 * p->s_4 * (1-p->p) * p->theta) + p->alpha_4 + p->mu) * i->Dx_200250);
+		i->Dx_100200 += step * (+ p->rho * i->UnDx_100200 + p->nu_4 * i->Dx_200250 - (p->nu_5 + p->epsilon + (p->art_200 * p->s_5 * p->p * p->theta) + (p->art_200 * p->s_5 * (1-p->p) * p->theta) + p->alpha_5 + p->mu) * i->Dx_100200);
+		i->Dx_50100 += step * (+ p->rho * i->UnDx_50100 + p->nu_5 * i->Dx_100200 - (p->nu_6 + p->epsilon + (p->art_200 * p->s_6 * p->p * p->theta) + (p->art_200 * p->s_6 * (1-p->p) * p->theta) + p->alpha_6 + p->mu) * i->Dx_50100);
+		i->Dx_50 += step * (+ p->rho * i->UnDx_50 + p->nu_6 * i->Dx_50100 - (p->epsilon + (p->art_200 * p->s_7 * p->p * p->theta) + (p->art_200 * p->s_7 * (1-p->p) * p->theta) + p->alpha_7 + p->mu) * i->Dx_50);
 		
 //		i->y1 += step * ( - (p->alpha_1 + p->mu) * i->y1);
 //		
