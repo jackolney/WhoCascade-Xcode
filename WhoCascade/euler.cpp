@@ -216,12 +216,12 @@ void Euler(initial * i, params * p, double start, double stop, double step)
 		
 		/* Non-differentials */
 		i->N = (i->UnDx_500 + i->UnDx_350500 + i->UnDx_250350 + i->UnDx_200250 + i->UnDx_100200 + i->UnDx_50100 + i->UnDx_50
-				+ i->Dx_500 + i->Dx_350500 + i->Dx_250350 + i->Dx_200250 + i->Dx_100200 + i->Dx_50100 + i->Dx_50
-				+ i->Care_500 + i->Care_350500 + i->Care_250350 + i->Care_200250 + i->Care_100200 + i->Care_50100 + i->Care_50
-				+ i->PreLtfu_500 + i->PreLtfu_350500 + i->PreLtfu_250350 + i->PreLtfu_200250 + i->PreLtfu_100200 + i->PreLtfu_50100 + i->PreLtfu_50
-				+ i->Tx_Na_500 + i->Tx_Na_350500 + i->Tx_Na_250350 + i->Tx_Na_200250 + i->Tx_Na_100200 + i->Tx_Na_50100 + i->Tx_Na_50
-				+ i->Tx_A_500 + i->Tx_A_350500 + i->Tx_A_250350 + i->Tx_A_200250 + i->Tx_A_100200 + i->Tx_A_50100 + i->Tx_A_50
-				+ i->Ltfu_500 + i->Ltfu_350500 + i->Ltfu_250350 + i->Ltfu_200250 + i->Ltfu_100200 + i->Ltfu_50100 + i->Ltfu_50);
+			+ i->Dx_500 + i->Dx_350500 + i->Dx_250350 + i->Dx_200250 + i->Dx_100200 + i->Dx_50100 + i->Dx_50
+			+ i->Care_500 + i->Care_350500 + i->Care_250350 + i->Care_200250 + i->Care_100200 + i->Care_50100 + i->Care_50
+			+ i->PreLtfu_500 + i->PreLtfu_350500 + i->PreLtfu_250350 + i->PreLtfu_200250 + i->PreLtfu_100200 + i->PreLtfu_50100 + i->PreLtfu_50
+			+ i->Tx_Na_500 + i->Tx_Na_350500 + i->Tx_Na_250350 + i->Tx_Na_200250 + i->Tx_Na_100200 + i->Tx_Na_50100 + i->Tx_Na_50
+			+ i->Tx_A_500 + i->Tx_A_350500 + i->Tx_A_250350 + i->Tx_A_200250 + i->Tx_A_100200 + i->Tx_A_50100 + i->Tx_A_50
+			+ i->Ltfu_500 + i->Ltfu_350500 + i->Ltfu_250350 + i->Ltfu_200250 + i->Ltfu_100200 + i->Ltfu_50100 + i->Ltfu_50);
 		
 	}
 	cout << "Finished." << endl;
