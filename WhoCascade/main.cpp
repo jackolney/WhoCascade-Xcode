@@ -23,6 +23,9 @@ int main() {
 	
 	Euler(i, p, 0, 10,  0.02);
 	
+	delete p;
+	delete i;
+	
 	return 0;
 }
 
@@ -46,12 +49,13 @@ int main() {
 
 
 // Steps:
-// 1) Can we put everything into functions? (keeps it neat)
-// 2) Sanity check to R output / Berkeley Madonna output
-// 3) Needs to take some inputs...
-// 4) Respond by returning a whole heap of vectors to R.
-// 5) EXPAND
-// 4) R .Call()
+// 1) Can we put everything into functions? (keeps it neat) - Done.
+// 2) Sanity check to R output / Berkeley Madonna output - Done.
+// 3) Needs to take some inputs... - Done.
+// 4) TAKE OUT OF Xcode
+// 5) Respond by returning a whole heap of vectors to R.
+// 6) EXPAND
+// 7) R .Call()
 
 // Development Notes:
 // Beta needs to be assigned at the beginning of each simulation. It is a pre-sim calculation. Based on "new infections" -> pass this to C++ and let it do the rest.
