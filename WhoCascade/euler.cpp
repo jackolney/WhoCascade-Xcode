@@ -92,6 +92,15 @@ void Euler(initial * i, params * p, double start, double stop, double step)
 		i->Care_50100 += step * (+ p->epsilon * i->Dx_50100 + p->nu_5 * i->Care_100200 - (p->nu_6 + p->kappa + (p->art_200 * p->p * p->gamma) + (p->art_200 * p->s_6 * p->p * p->theta) + (p->art_200 * (1-p->p) * p->gamma) + (p->art_200 * p->s_6 * (1-p->p) * p->theta) + p->alpha_6 + p->mu) * i->Care_50100);
 		i->Care_50 += step * (+ p->epsilon * i->Dx_50 + p->nu_6 * i->Care_50100 - (p->kappa + (p->art_200 * p->p * p->gamma) + (p->art_200 * p->s_7 * p->p * p->theta) + (p->art_200 * (1-p->p) * p->gamma) + (p->art_200 * p->s_7 * (1-p->p) * p->theta) + p->alpha_7 + p->mu) * i->Care_50);
 		
+		/* PRE-LTFU */
+		i->PreLtfu_500 += step * (+ p->kappa * i->Care_500 - (p->nu_1 + (p->art_all * p->s_1 * p->p * p->theta) + (p->art_all * p->s_1 * (1-p->p) * p->theta) + p->alpha_1 + p->mu) * i->PreLtfu_500);
+		i->PreLtfu_350500 += step * (+ p->kappa * i->Care_350500 + p->nu_1 * i->PreLtfu_500 - (p->nu_2 + (p->art_500 * p->s_2 * p->p * p->theta) + (p->art_500 * p->s_2 * (1-p->p) * p->theta) + p->alpha_2 + p->mu) * i->PreLtfu_350500);
+		i->PreLtfu_250350 += step * (+ p->kappa * i->Care_250350 + p->nu_2 * i->PreLtfu_350500 - (p->nu_3 + (p->art_350 * p->s_3 * p->p * p->theta) + (p->art_350 * p->s_3 * (1-p->p) * p->theta) + p->alpha_3 + p->mu) * i->PreLtfu_250350);
+		i->PreLtfu_200250 += step * (+ p->kappa * i->Care_200250 + p->nu_3 * i->PreLtfu_250350 - (p->nu_4 + (p->art_350 * p->s_4 * p->p * p->theta) + (p->art_350 * p->s_4 * (1-p->p) * p->theta) + p->alpha_4 + p->mu) * i->PreLtfu_200250);
+		i->PreLtfu_100200 += step * (+ p->kappa * i->Care_100200 + p->nu_4 * i->PreLtfu_200250 - (p->nu_5 + (p->art_200 * p->s_5 * p->p * p->theta) + (p->art_200 * p->s_5 * (1-p->p) * p->theta) + p->alpha_5 + p->mu) * i->PreLtfu_100200);
+		i->PreLtfu_50100 += step * (+ p->kappa * i->Care_50100 + p->nu_5 * i->PreLtfu_100200 - (p->nu_6 + (p->art_200 * p->s_6 * p->p * p->theta) + (p->art_200 * p->s_6 * (1-p->p) * p->theta) + p->alpha_6 + p->mu) * i->PreLtfu_50100);
+		i->PreLtfu_50 += step * (+ p->kappa * i->Care_50 + p->nu_6 * i->PreLtfu_50100 - ((p->art_200 * p->s_7 * p->p * p->theta) + (p->art_200 * p->s_7 * (1-p->p) * p->theta) + p->alpha_7 + p->mu) * i->PreLtfu_50);
+		
 //		i->y1 += step * ( - (p->alpha_1 + p->mu) * i->y1);
 //		
 //		i->y2 += step * ( + (p->alpha_1 * i->y1) - (p->mu * i->y2) );
