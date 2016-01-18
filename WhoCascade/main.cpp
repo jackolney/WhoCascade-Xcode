@@ -52,3 +52,7 @@ int main() {
 // 4) Respond by returning a whole heap of vectors to R.
 // 5) EXPAND
 // 4) R .Call()
+
+// Development Notes:
+// Beta needs to be assigned at the beginning of each simulation. It is a pre-sim calculation. Based on "new infections" -> pass this to C++ and let it do the rest.
+// Beta placeholder is: 0.02466
