@@ -173,6 +173,15 @@ void Euler(initial * i, params * p, double start, double stop, double step)
 			+ ((p->art_200 * p->p * p->gamma) + (p->art_200 * p->s_7 * p->p * p->theta)) * i->Care_50
 			+ (p->art_200 * p->s_7 * p->p * p->theta) * i->Dx_50 + (p->art_200 * p->s_7 * p->p * p->theta) * i->UnDx_50
 			- (p->delta_5 + p->omega + p->tau_7 + p->mu) * i->Tx_A_50);
+		
+		/* LTFU */
+		i->Ltfu_500 += step * (+ p->omega * (i->Tx_Na_500 + i->Tx_A_500) - (p->nu_1 + p->alpha_1 + p->mu) * i->Ltfu_500);
+		i->Ltfu_350500 += step * (+ p->omega * (i->Tx_Na_350500 + i->Tx_A_350500) + p->nu_1 * i->Ltfu_500 - (p->nu_2 + p->alpha_2 + p->mu) * i->Ltfu_350500);
+		i->Ltfu_250350 += step * (+ p->omega * (i->Tx_Na_250350 + i->Tx_A_250350) + p->nu_2 * i->Ltfu_350500 - (p->nu_3 + p->alpha_3 + p->mu) * i->Ltfu_250350);
+		i->Ltfu_200250 += step * (+ p->omega * (i->Tx_Na_200250 + i->Tx_A_200250) + p->nu_3 * i->Ltfu_250350 - (p->nu_4 + p->alpha_4 + p->mu) * i->Ltfu_200250);
+		i->Ltfu_100200 += step * (+ p->omega * (i->Tx_Na_100200 + i->Tx_A_100200) + p->nu_4 * i->Ltfu_200250 - (p->nu_5 + p->alpha_5 + p->mu) * i->Ltfu_100200);
+		i->Ltfu_50100 += step * (+ p->omega * (i->Tx_Na_50100 + i->Tx_A_50100) + p->nu_5 * i->Ltfu_100200 - (p->nu_6 + p->alpha_6 + p->mu) * i->Ltfu_50100);
+		i->Ltfu_50 += step * (+ p->omega * (i->Tx_Na_50 + i->Tx_A_50) + p->nu_6 * i->Ltfu_50100 - (p->alpha_7 + p->mu) * i->Ltfu_50);
 
 
 		
